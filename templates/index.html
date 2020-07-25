@@ -1,0 +1,257 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta charset="utf-8">
+  <title>Brains Cube</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <script type="text/javascript">
+
+  function executeOnSubmit()
+  {
+       var status = checkField();
+
+          if(status[0] == 0)
+          {
+                  alert(status[1]);
+                  return false;
+          }
+
+          var res = confirm("Submit the form contents?");
+
+          if(res)
+                  return true;
+          else
+                  return false;
+  }
+
+  function checkField()
+  {
+          var check = new Array();
+          var elemValue = document.getElementById("name").value;
+          if(elemValue == "") {
+                  check[0] = 0;
+                  check[1] = "Enter Name!!!";
+          }
+          else if (elemValue = "1") {
+                  check[0] = 0;
+                  check[1] = "Your data will submit..!";
+          }
+          else {
+                  check[0] = 1;
+          }
+          return check;
+  }
+  </script>
+
+
+
+
+  <!-- Favicons -->
+  <link href="{%static 'css/favicon.png' %}" rel="icon">
+  <link href="{%static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: NewBiz
+    Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+  <img src="http://www.edmdistrict.com/wp-content/uploads/2016/04/Sun-Smiling-Blue-Sky-Cartoon-Fotolia_9210923_XS.jpg" id="myP">
+
+  <button type="button" onclick="myFunction()">Hide content of p</button>
+  <button type="button" onclick="myFunction2()">show content of p</button>
+
+  <script>
+  function myFunction() {
+    document.getElementById("myP").style.visibility = "hidden";
+
+  }
+  function myFunction2() {
+    document.getElementById("myP").style.visibility="visible";
+
+  }
+  </script>
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <a href="/" >
+        <img src="{% static 'img/BC3_burned.png' %}" style='height:200px ;width:200px;  '/></a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href=" /">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+    <!---    <li class="drop-down"><a href="/services">Services</a>
+            <ul>
+              <li class="drop-down"><a href="#">SAP Technologies</a>
+			  <ul>
+                  <li><a href="/cloud">Cloud Computing</a></li>
+                  <li><a href="/sap">SAP UI5</a></li>
+                  <li><a href="/fiori">FIORI</a></li>
+                  <li><a href="/hana">S4 HANA</a></li>
+                  <li><a href="/cloud">Cloud DB</a></li>
+                  <li><a href="/cpi">CPI</a></li>
+                  <li><a href="/success">SuccessFactors</a></li>
+                  <li><a href="/sale">Sale Force</a></li>
+                  <li><a href="/c4c">C4c </a></li>
+                  <li><a href="/cloudcomputing">JAVA CDS ABAP</a></li>
+              </ul>
+			  </li>
+              <li class="drop-down"><a href="#">Products</a>
+                <ul>
+                  <li><a href="#">InitiRec</a></li>
+                  <li><a href="#">Smart profiler</a></li>
+                  <li><a href="#">Groceriecs on Move</a></li>
+                  <li><a href="#">Drop iT</a></li>
+                  <li><a href="#">Resume Builder</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Web Based Technologies</a></li>
+              <li><a href="#">Apps</a></li>
+              <li><a href="#">Games</a></li>
+            </ul>
+          </li>--->
+		  <li><a href="/services">Services</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+        <!--  <li><a href="#team">Team</a></li>-->
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+
+    </div>
+  </header><!-- #header -->
+
+
+  {% block content %}
+
+  {% endblock %}
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>NewBiz</h3>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Get In Touch</h4>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> brainscube@tomar.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+            <form action="" method="post">
+              {% csrf_token %}
+              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'lib/mobile-nav/mobile-nav.js' %}"></script>
+  <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+  <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static 'contactform/contactform.js' %}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

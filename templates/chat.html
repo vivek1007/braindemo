@@ -1,0 +1,163 @@
+{%load static%}
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page
+.open-button {
+  background-color: green;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 200px;
+
+}
+*/
+.open-button {
+
+  position: fixed;
+  bottom: 8px;
+      width: 60px;
+      height: 60px;
+      right: 75px;
+      border-color:transparent;
+      border-radius: 40px;
+      background: transparent;
+      color:black;
+
+}
+.open-button #img{
+  opacity: 0.8;
+  position: fixed;
+  bottom: 8px;
+      width: 60px;
+      height: 60px;
+      right: 75px;
+      -webkit-border-radius: 35px;
+      -moz-border-radius: 35px;
+      border-radius: 50px;
+
+
+
+}
+
+
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 22px;
+  border: 5px solid #f1f1f1;
+  z-index: 9;
+  background-color: white;
+  box-shadow: 2px 1px 30px rgba(127, 137, 161, 0.3);
+
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 340px;
+  padding: 30px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: doted;
+  background: ;
+  text:white;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.semi-transparent-button {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  width: 80%;
+  max-width: 200px;
+  background: #fff; /* fallback color for old browsers */background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border:solid;
+}
+
+
+</style>
+
+<button class="open-button" onclick="openForm()" ><img id="img" src="{%static 'images/chat.png'%}"></button>
+
+<div class="chat-popup" id="myForm">
+  <form action="" class="form-container">
+    {% csrf_token %}
+  <center>  <h1><u><I>Chat Box</I></h1></u></center>
+
+    <label for="msg"><b>Message:</b></label>
+    <textarea placeholder="Type message.." name="message" required></textarea>
+    <center>
+    <button type="submit" class="btn">Send</button>&nbsp<button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+
+<a class="semi-transparent-button" href="#">Brainscube</a>
+
+    </center>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
